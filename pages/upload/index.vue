@@ -162,6 +162,15 @@ let caption=ref('')
 let fileData=ref(null)
 let errors=ref(null)
 let isUploading=ref(false)
+
+watch(()=>caption.value,(caption)=>{
+    if(caption.length>=150){
+        errorType.value='caption'
+        return
+    }
+    errorType.value=null
+})
+
 const onChange =()=>{
     fileDisplay.value=URL.createObjectURL(file.value.files[0]);
     fileData.value=file.value.files[0];
