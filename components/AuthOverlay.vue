@@ -16,14 +16,14 @@
             <Register v-else/>
 
             <div class="absolute flex items-center justify-center py-5 left-0 bottom-0 border-t w-full">
-                <span v-if="isRegister" class="text-[14px] text-gray-600">Don't have an account?</span>
-                <span v-else class="text-[14px] text-gray-600">Already have an account?</span>
+                <span v-if="isRegister" class="text-[14px] text-gray-600">没有账户？</span>
+                <span v-else class="text-[14px] text-gray-600">已经有账户？</span>
                 <button
                     @click="$event=>isRegister = !isRegister"
                     class="text-[14px] text-[#8800FF] font-semibold pl-1"
                 >
-                    <span v-if="isRegister">Sign up</span>
-                    <span v-else>Log in</span>
+                    <span v-if="isRegister">注册</span>
+                    <span v-else>登录</span>
                 </button>
             </div>
 

@@ -1,60 +1,66 @@
 <template>
-    <div class="text-center text-[28px] mb-4 font-bold">
+    <div class="text-center text-[28px] mb-10 font-bold">
         Log in
     </div>
     <div class="px-6 pb-1.5 text-[15px]">
-        Email address
+        邮箱
     </div>
-    <div class="px-6 pb-2">
+    <div class="px-6 pb-2 w-[80%] flex justify-center items-center">
         <TextInput 
-            placeholder="Email address"
-            v-model:input="email"
-            inputType="email"
+            placeholder="学号"
+            v-model:input="uid"
+            inputType="text"
             :autoFocus="true"
-            error=""
+            :error="errors_uid"
         />
+        &nbsp;
+        <span>@tongji.edu.cn</span>
     </div>
     <div class="px-6 pb-1.5 text-[15px]">
-        Password
+        密码
     </div> 
     <div class="px-6 pb-2">
         <TextInput 
-            placeholder="Password"
+            placeholder="请输入密码"
             v-model:input="password"
             inputType="password"
         />
     </div>
-    <div class="px-6 text-[12px] text-gray-600">Forgot password?</div>
+    <div class="px-6 text-[12px] text-gray-600">忘记密码？</div>
 
     <div class="px-6 pb-2 mt-6">
         <button
-            :disabled="(!email || !password)"
-            :class="(!email || !password)?'bg-gray-200':'bg-[#8800FF]'"
+            :disabled="(!uid || !password)"
+            :class="(!uid || !password)?'bg-gray-200':'bg-[#8800FF]'"
             @click="$event=>login()"
             class="w-full text-[17px] font-semibold text-white py-3 rounded-sm"
         >
-        Log in
+        登录
         </button>
     </div>
 </template>
 
 <script setup>
 const { $userStore, $generalStore } = useNuxtApp()
-let email    = ref(null)
+import { message } from 'ant-design-vue';
+
+let uid    = ref(null)
 let password = ref(null)
 let errors   = ref(null)
+
 const login = async () => {
     errors.value = null
-    try{
-        await $userStore.getTokens()
-        await $userStore.login(email.value,password.value)
-        await $userStore.getUser()
-
-        $generalStore.isLoginOpen = false
-        console.log(res)
-    }catch(e){
-        console.log(e)
+    if(!errors_uid.value){
+        errors_uid.value='学号不能为空'
     }
+    try{
+        await $userStore.login(uid.value+'@tongji.edu.cn',password.value)
+        message.success('登陆成功')
+        
+        $generalStore.isLoginOpen = false
+        }catch(e){
+        message.error("邮箱或密码有误")
+        }
 }
 
 </script>

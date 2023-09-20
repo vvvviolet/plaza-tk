@@ -72,12 +72,17 @@
                         </div>
                        
                     </div>
+                    
                 </div>
             </div>
 
             
         </div>
     </div>
+
+        <div>
+    </div>
+
 </div>  
 </template>
 
@@ -85,4 +90,5 @@
     const route = useRoute()
     const { $userStore, $generalStore } = useNuxtApp()
     let showMenu=ref(false)
+    const { locale } = useI18n()
 </script>

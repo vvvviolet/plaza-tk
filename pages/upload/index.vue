@@ -156,7 +156,7 @@
 import UploadLayout from '~/layouts/UploadLayout.vue'
 
 let file=ref(null)
-let fileDisplay=ref(null)
+let fileDisplay=ref(null) 
 let errorType=ref(null)
 let caption=ref('')
 let fileData=ref(null)
