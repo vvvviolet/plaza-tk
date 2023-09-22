@@ -6,10 +6,9 @@
             class="
                 block
                 w-full
-                bg-[#F1F1F2]
-                text-gray-800
-                border
-                border-gray-300
+                bg-gray-200 
+                bg-opacity-0
+                text-black
                 rounded-md
                 py-2.5
                 px-3
@@ -44,3 +43,9 @@ const inputComputed = computed({
 })
 
 </script>
+<style>
+input::placeholder{
+	color:black;
+}</style>
+
+

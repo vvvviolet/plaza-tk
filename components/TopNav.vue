@@ -30,7 +30,7 @@
 
             <div v-if="!$userStore.id" class="flex items-center">
                 <button 
-                    @click="$event=>$generalStore.isLoginOpen=true"
+                    @click="$event=>$generalStore.isAuthOpen=true"
                     class="flex items-center bg-[#9900FF] text-white border rounded-md px-3 py-[6px]">
                     <span class="mx-4 font-medium text-[15px]">Log in</span>
                 </button>
@@ -89,6 +89,6 @@
 <script setup>
     const route = useRoute()
     const { $userStore, $generalStore } = useNuxtApp()
+
     let showMenu=ref(false)
-    const { locale } = useI18n()
 </script>

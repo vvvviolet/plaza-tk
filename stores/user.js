@@ -31,12 +31,12 @@ export const useUserStore = defineStore('user',{
         // this.$state.bio  =res.data[0].bio
         // this.$state.image=res.data[0].image
        },
+       
        async getVerifyCode(email){
-        let res=await $axios.post('/auth/code',{
+        let res = await $axios.post('/auth/code',{
             email:email
         })
-        console.log(res.data)
-        
+       return res.data
        }
     },
     persist: true

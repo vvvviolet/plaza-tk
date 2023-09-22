@@ -6,6 +6,7 @@
         <div>
             <SideNavMain />
         </div>
+        
         <slot></slot>
     </div>
 </template>

@@ -1,41 +1,24 @@
 <template>
-    <div class="text-center text-[28px] mb-10 font-bold">
-        Log in
-    </div>
-    <div class="px-6 pb-1.5 text-[15px]">
-        邮箱
-    </div>
-    <div class="px-6 pb-2 w-[80%] flex justify-center items-center">
+    <div class="px-6 pt-20 pb-1 w-[80%] flex justify-around items-center">
         <TextInput 
-            placeholder="学号"
+            placeholder="请输入学号"
             v-model:input="uid"
             inputType="text"
             :autoFocus="true"
             :error="errors_uid"
+            class=" bg-opacity-1"
         />
         &nbsp;
-        <span>@tongji.edu.cn</span>
+        <span class="text-white ">@tongji.edu.cn</span>
     </div>
-    <div class="px-6 pb-1.5 text-[15px]">
-        密码
-    </div> 
-    <div class="px-6 pb-2">
-        <TextInput 
-            placeholder="请输入密码"
-            v-model:input="password"
-            inputType="password"
-        />
-    </div>
-    <div class="px-6 text-[12px] text-gray-600">忘记密码？</div>
 
     <div class="px-6 pb-2 mt-6">
         <button
-            :disabled="(!uid || !password)"
-            :class="(!uid || !password)?'bg-gray-200':'bg-[#8800FF]'"
+            :disabled="(!uid)"
             @click="$event=>login()"
-            class="w-full text-[17px] font-semibold text-white py-3 rounded-sm"
+            class="w-full text-[17px] font-semibold text-white bg-gray-200 bg-opacity-10 py-3 rounded-sm cursor-pointer"
         >
-        登录
+        验 证
         </button>
     </div>
 </template>

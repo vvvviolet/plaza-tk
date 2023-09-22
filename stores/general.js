@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useGeneralStore = defineStore('general',{
     state:()=>({
-        isLoginOpen:false,
+        isAuthOpen:false,
         isEditProfileOpen:false,
         selectedPost:null,
         ids:null,

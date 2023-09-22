@@ -56,7 +56,7 @@
             @click="sendEmail"
             class="w-[150px] text-[17px] font-semibold text-white py-3 rounded-md"
             >
-            {{ ok_to_send? '获取验证码':`${60-time_now+time_start}s后重试` }}
+            {{ ok_to_send? '获取验证码':`${60-time_now + time_start}s后重试` }}
         </button>
     </div>
 
