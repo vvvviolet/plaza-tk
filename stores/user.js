@@ -11,16 +11,15 @@ export const useUserStore = defineStore('user',{
         image:''
     }),
     actions:{
-       async login(email,password){
-        await $axios.post('/auth/signin',{
-            email:email,
-            password:password
-        })
-       },
-       async signup(email,password){
-        await $axios.post('/auth/signup',{
-            email:email,
-            password:password
+       async auth(email,code){
+        await $axios.post('/auth/verify',{
+            email: email,
+            code: code
+        }).then((res)=>{
+            console.log(res['data'])
+            return new Promise(res['data'])
+        }).catch((e)=>{
+            console.log(e)
         })
        },
        async getUser(){
@@ -33,10 +32,10 @@ export const useUserStore = defineStore('user',{
        },
        
        async getVerifyCode(email){
-        let res = await $axios.post('/auth/code',{
+        let {data} = await $axios.post('/auth/code',{
             email:email
         })
-       return res.data
+       return data
        }
     },
     persist: true
