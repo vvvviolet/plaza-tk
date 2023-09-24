@@ -1,80 +1,103 @@
 <template>
-    <div id="PostMain" class="flex border-b py-6">
-        <div class="cursor-pointer">
-            <img class="rounded-full max-h-[60px]" width="60" src="https://picsum.photos/id/8/300/320" alt="avatar">
+    <div id="PostMain"
+    :class="route.fullPath === '/' ? 'max-w-[1150px]' : ''"
+    class="lg:ml-[320px] md:ml-[60px]"
+    >
+        <div id="PostNav" class="flex border-b m-1 md:overflow-clip lg:overflow-clip overflow-scroll">
+            <div class="mr-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100">
+                <a href="#">捞人</a>
+            </div>
+            <div class="mx-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100">
+                <a href="#">搭子</a>
+            </div>
+            <div class="mx-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100 ">
+                <a href="#">社团</a>
+            </div>  
+            <div class="mx-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100 ">
+                <a href="#">课程</a>
+            </div>  
+            <div class="mx-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100 ">
+                <a href="#">生活</a>
+            </div>  
+            <div class="mx-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100 ">
+                <a href="#">板块1</a>
+            </div>  
+            <div class="mx-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100 ">
+                <a href="#">板块2</a>
+            </div>  
+            <div class="ml-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100">
+                <a href="#">板块3</a>
+            </div>  
+            <div class="ml-1 mb-2 p-1 shrink-0 rounded-sm hover:bg-slate-100">
+                <a href="#">板块n</a>
+            </div>  
+
         </div>
-        <div class="pl-3 w-full px-4">
-            <div class="flex items-center justify-between pb-0.5">
-                <button>
-                    <span class="font-bold hover:underline cursor-pointer">
-                        User name
-                    </span>
-                    <span class="text-[13px] text-light text-gray-500 pl-1 cursor-pointer">
-                        Introduction
-                    </span>
-                </button>
 
-                <button class="border text-[15px] px-[21px] border-[#9900FF] text-[#9900FF] hover:bg-[#FFEEF2] font-semibold rounded-md">
-                    Follow
-                </button>
+        <div id="PostMainContent" class="flex flex-wrap justify-center">
+            <!-- 160 x 64 -->
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
             </div>
-            <div class="text-[15px] pb-0.5 break-words md:max-w-[400px] max-w-[300px]">30分钟定时器</div>
-            <div class="text-[14px] text-gray-500 pb-0.5">#fun #cool #SuperAwesome</div>
-            <div class="text-[14px] pb-0.5 flex items-center font-semibold">
-                <Icon name="mdi:music" size="17"></Icon>
-                <div class="px-1">original sound - AWESOME</div>
-                <Icon name="mdi:heart" size="20"></Icon>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
             </div>
-            <div class="mt-2.5 flex">
-                <div class="relative max-h-[580px] max-w-[260px] flex items-center bg-black rounded-xl cursor-pointer">
-                    <video 
-                        ref="video" 
-                        loop 
-                        muted 
-                        src="lake.mp4">
-                    </video>
-                    <img class="absolute right-2 bottom-14" 
-                         width="16" 
-                         src="~/assets/images/logo-w.png" 
-                         alt="logo">
-                </div>
-                <div class="relative mr-[75px]">
-                    <div class="absolute bottom-0 pl-2">
-
-
-                        <div class="pb-4 text-center">
-                            <button class="rounded-full bg-gray-200 p-2 cursor-pointer">
-                                <Icon name="mdi:heart" size="25"></Icon>
-                            </button>
-                            <span class="text-xs text-gray-800 font-semibold">34</span>
-                        </div>
-
-                        <div class="pb-4 text-center">
-                            <button class="rounded-full bg-gray-200 p-2 cursor-pointer">
-                                <Icon name="bx:bxs-message-rounded-dots" size="25"></Icon>
-                            </button>
-                            <span class="text-xs text-gray-800 font-semibold">34</span>
-                        </div>
-
-                        <div class="pb-4 text-center">
-                            <button class="rounded-full bg-gray-200 p-2 cursor-pointer">
-                                <Icon name="ri:share-forward-fill" size="25"></Icon>
-                            </button>
-                            <span class="text-xs text-gray-800 font-semibold">34</span>
-                        </div>
-
-
-                    </div>
-                </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
             </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+            <div class=" w-[200px]  lg:w-[220px]" >
+                <Post />
+            </div>
+           
+           
+          
         </div>
     </div>
 </template>    
 
 <script setup>
-let video = ref(null)
+let posts = ref([])
+const route = useRoute()
 
-onMounted(()=>{
-    video.value.play()
-})
+// onMounted(()=>{
+//     try{
+
+//     }
+//     catch(err){
+//         message.error('加载post失败')
+//     }
+// })
 </script>

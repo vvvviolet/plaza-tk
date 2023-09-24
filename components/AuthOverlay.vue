@@ -12,7 +12,7 @@
                 <button 
                     @click="$generalStore.isAuthOpen=false"
                     class="p-1 rounded-full flex items-center">
-                    <Icon name="prime:angle-left" color="black" size="26"/>
+                    <Icon name="prime:angle-left" color="rgb(250, 224, 133)" size="26"/>
                     <h1>PLaza</h1>
                 </button>
                 
@@ -54,32 +54,7 @@ const { $generalStore } = useNuxtApp()
     50vmax 50vmax;
   background-repeat: no-repeat;
   animation: 10s movement linear infinite;
-  /* background: radial-gradient(
-      circle at 10% 20%,
-      rgba(252, 252, 252, 0.5),
-      rgba(255, 0, 0, 0) 70.71%
-    ),
-    radial-gradient(
-      circle at 6.7% 75%,
-      rgba(65, 109, 241, 0.5),
-      rgba(0, 0, 255, 0) 70.71%
-    ),
-    radial-gradient(
-      circle at 36.7% 35%,
-      rgba(2, 240, 69, 0.5),
-      rgba(0, 0, 255, 0) 70.71%
-    ),
-    radial-gradient(
-      circle at 36.7% 35%,
-      rgba(74, 201, 255, 0.5),
-      rgba(0, 0, 255, 0) 70.71%
-    ),
-    radial-gradient(
-        circle at 3.3% 95%,  
-        rgba(254, 254, 254, 0.5),
-        rgba(0, 255, 0, 0) 70.71%
-      ) rgb(232, 232, 182); */
-  /* border-radius: 50%; */
+  
 }
 
 .overlay::after {
@@ -98,13 +73,13 @@ const { $generalStore } = useNuxtApp()
   width: 200%;
   height: 100%;
   position: absolute;
-  bottom: -20%;
+  bottom: -6%;
   left: -50%;
-  background-image: -webkit-linear-gradient(#fff 1px, transparent 8px), -webkit-linear-gradient(left, #fff 2px, transparent 1px);
-  background-size: 100px 100px,100px 100px;
+  background-image: -webkit-linear-gradient(#fff 1px, transparent 0px), -webkit-linear-gradient(left, #fff 1px, transparent 0px);
+  background-size: 1px 7px,10px 100px;
   background-position: -1px -1px,-1px -1px;
-  transform: rotateX(260deg);
-  animation: planeMoveTop 8s infinite linear;
+  transform: rotateX(87deg);
+  animation: planeMoveTop 100s infinite linear;
 }
 
 @keyframes movement {

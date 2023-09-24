@@ -9,7 +9,8 @@ export const useGeneralStore = defineStore('general',{
         isBackUrl:"/",
         posts:null,
         suggested:null,
-        following:null
+        following:null,
+        darkMode:true
     }),
     actions:{
         //

@@ -4,8 +4,7 @@
         <div class="flex items-center lg:mx-0 mx-auto">
             <Icon :name="icon" :color="colorString" :size="sizeString"/>
             <span
-                :class="`text-[${colorString}]`"
-                class="lg:block hidden pl-[9px] mt-0.5 font-semibold text-[17px]"
+                class="lg:block hidden pl-[9px] mt-0.5 font-light text-[17px] "
             >
                 {{ iconString }}
             </span>
@@ -19,8 +18,10 @@ const {iconString,colorString,sizeString}=toRefs(props)
 
 let icon=ref('icon')
 // console.log(iconString.value)
-if (iconString.value === 'For You')icon.value='mdi:home'
-if (iconString.value === 'Following') icon.value='ci:group'
-if (iconString.value === 'LIVE') icon.value='ri:live-line'
+if (iconString.value === '首页')icon.value='mdi:home'
+if (iconString.value === '推荐') icon.value='prime:thumbs-up'
+if (iconString.value === '发布') icon.value='prime:pencil'
+if (iconString.value === '添加Plaza到桌面') icon.value='prime:plus-circle'
+
 
 </script>

@@ -15,7 +15,6 @@ export default defineNuxtConfig(
       'nuxt-icon',
       '@pinia/nuxt',
       '@pinia-plugin-persistedstate/nuxt',
-      '@nuxtjs/i18n',
       '@ant-design-vue/nuxt'
     ],
 
@@ -29,9 +28,6 @@ export default defineNuxtConfig(
           },
         },
       }
-    },
-    i18n: {
-      vueI18n: './i18n.config.ts' // if you are using custom path, default 
     },
     antd:{
       

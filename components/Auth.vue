@@ -1,7 +1,7 @@
 <template>
     <div class="px-6 mt-20 pb-1 font-light border-b flex justify-between items-center">
         <TextInput 
-            placeholder="请输入学号"
+            placeholder="学号"
             v-model:input="uid"
             inputType="text"
             :autoFocus="true"
@@ -14,7 +14,7 @@
     </div>
     <div class="px-6 pb-1 font-light flex border-b justify-between items-center">
         <TextInput 
-            placeholder="请输入验证码"
+            placeholder="验证码"
             v-model:input="code"
             inputType="text"
             :autoFocus="true"
@@ -36,7 +36,7 @@
     <div class="px-6 pb-2 mt-6 flex justify-center">
         <button
             @click="$event=>auth()"
-            class="verify-btn w-[100px] h-[100px] bg-opacity-0  py-3 rounded-lg "
+            class="verify-btn w-[70px] h-[70px] bg-opacity-0  py-3 rounded-lg "
         >
         <Icon name="prime:angle-right" color="white" size="40"/>
         </button>
@@ -139,19 +139,20 @@ const auth = async () => {
     background-position: center;
     background-size:cover;  
     background-repeat: no-repeat;  
-    filter: drop-shadow(0 10 10 10 rgba(250, 249, 249, 1));
-    border-radius: 100px;
+    border-radius:100%;
+    animation: glow 2s infinite alternate; /* 添加动画效果 */
 
 }
-
-.verify-btn:hover{
-    box-shadow: 
-    0 0 10px black,
-    0 0 20px white,
-    0 0 40px white,
-    0 0 80px white,
-    0 0 160px white;
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1); /* 初始阴影效果 */
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* 最终阴影效果 */
+        
+    }
 }
+
 .verify-btn:active{
     background-color: rgba(246, 246, 246, 0.2);
     box-shadow: 
